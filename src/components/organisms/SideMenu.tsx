@@ -7,6 +7,7 @@ import {
   Paper,
   styled,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const StyledListItemIcon = styled(ListItemIcon)({
   color: "unset",
@@ -25,12 +26,14 @@ type Props = {
 
 const SideMenu = (props: Props) => {
   const { menuItems, initialSelectedItemId = "" } = props;
+  const navigate = useNavigate();
   const [selectedItemId, setSelectedItemId] = React.useState<string>(
     initialSelectedItemId
   );
 
   const handleListItemClick = (id: string) => {
     setSelectedItemId(id);
+    navigate(id);
   };
 
   return (

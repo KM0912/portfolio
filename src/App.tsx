@@ -3,6 +3,11 @@ import "./App.css";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Container } from "@mui/material";
 import SideMenu from "./components/organisms/SideMenu";
+import { Routes, Route } from "react-router-dom";
+import About from "./components/organisms/About";
+import Works from "./components/organisms/Works";
+import Skill from "./components/organisms/Skill";
+import Sns from "./components/organisms/Sns";
 
 const MENU_ITEMS = [
   { id: "about", icon: "😸", text: "About" },
@@ -24,7 +29,13 @@ function App() {
           </Grid>
           <Grid xs={8}>
             <Container style={{ backgroundColor: "gray" }}>
-              TODO:コンテンツの表示エリアを実装する
+              <Routes>
+                <Route path="/" element={<About />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/works" element={<Works />} /> {/*追加*/}
+                <Route path="/skill" element={<Skill />} /> {/*追加*/}
+                <Route path="/sns" element={<Sns />} /> {/*追加*/}
+              </Routes>
             </Container>
           </Grid>
         </Grid>
