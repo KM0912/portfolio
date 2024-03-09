@@ -32,9 +32,9 @@ function App() {
               <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/works" element={<Works />} /> {/*追加*/}
-                <Route path="/skill" element={<Skill />} /> {/*追加*/}
-                <Route path="/sns" element={<Sns />} /> {/*追加*/}
+                <Route path="/works" element={<Works />} />
+                <Route path="/skill" element={<Skill />} />
+                <Route path="/sns" element={<Sns />} />
               </Routes>
             </Container>
           </Grid>
