@@ -1,21 +1,10 @@
 import React from "react";
-import {
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  MenuList,
-  Paper,
-  styled,
-} from "@mui/material";
+import { ListItemText, MenuItem, MenuList, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
-const StyledListItemIcon = styled(ListItemIcon)({
-  color: "unset",
-});
 
 type MenuItemType = {
   id: string;
-  icon: string;
+  emoji: string;
   text: string;
 };
 
@@ -47,7 +36,7 @@ const SideMenu = (props: Props) => {
               onClick={() => handleListItemClick(item.id)}
               selected={selectedItemId === item.id}
             >
-              <StyledListItemIcon>{item.icon}</StyledListItemIcon>
+              {item.emoji}
               <ListItemText>{item.text}</ListItemText>
             </MenuItem>
           ))}

@@ -10,10 +10,10 @@ import Skill from "./components/organisms/Skill";
 import Sns from "./components/organisms/Sns";
 
 const MENU_ITEMS = [
-  { id: "about", icon: "😸", text: "About" },
-  { id: "works", icon: "😼", text: "Works" },
-  { id: "skill", icon: "😺", text: "Skill" },
-  { id: "sns", icon: "😻", text: "SNS" },
+  { id: "about", emoji: "😸", text: "About" },
+  { id: "works", emoji: "😼", text: "Works" },
+  { id: "skill", emoji: "😺", text: "Skill" },
+  { id: "sns", emoji: "😻", text: "SNS" },
 ];
 
 function App() {
