@@ -8,6 +8,7 @@ import About from "./components/organisms/About";
 import Works from "./components/organisms/Works";
 import Skill from "./components/organisms/Skill";
 import Sns from "./components/organisms/Sns";
+import Header from "./components/organisms/Header";
 
 const MENU_ITEMS = [
   { id: "about", emoji: "😸", text: "About" },
@@ -19,7 +20,7 @@ const MENU_ITEMS = [
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header />
       <Container>
         <Grid container spacing={2}>
           <Grid xs={4}>
