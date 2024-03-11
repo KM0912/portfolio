@@ -9,6 +9,7 @@ import Works from "./components/organisms/Works";
 import Skill from "./components/organisms/Skill";
 import Sns from "./components/organisms/Sns";
 import Header from "./components/organisms/Header";
+import { colors } from "./config/colors";
 
 const MENU_ITEMS = [
   { id: "about", emoji: "😸", text: "About" },
@@ -17,24 +18,31 @@ const MENU_ITEMS = [
   { id: "sns", emoji: "😻", text: "SNS" },
 ];
 
-const StyledContainer = styled(Container)({
-  backgroundColor: "gray",
+const StyledMainContainer = styled(Container)({
+  minHeight: "100vh",
   paddingTop: "16px",
+  backgroundColor: colors.bodyBackground,
+});
+
+const StyledContentContainer = styled(Container)({
+  backgroundColor: colors.contentBackground,
+  padding: "16px",
+  borderRadius: "8px",
 });
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <StyledContainer>
+      <StyledMainContainer>
         <Grid container spacing={2}>
           <Grid xs={4}>
-            <Container style={{ backgroundColor: "gray" }}>
+            <Container>
               <SideMenu menuItems={MENU_ITEMS} />
             </Container>
           </Grid>
           <Grid xs={8}>
-            <Container style={{ backgroundColor: "gray" }}>
+            <StyledContentContainer>
               <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />
@@ -42,10 +50,10 @@ function App() {
                 <Route path="/skill" element={<Skill />} />
                 <Route path="/sns" element={<Sns />} />
               </Routes>
-            </Container>
+            </StyledContentContainer>
           </Grid>
         </Grid>
-      </StyledContainer>
+      </StyledMainContainer>
     </div>
   );
 }
