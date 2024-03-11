@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { Container } from "@mui/material";
+import { Container, styled } from "@mui/material";
 import SideMenu from "./components/organisms/SideMenu";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/organisms/About";
@@ -17,11 +17,16 @@ const MENU_ITEMS = [
   { id: "sns", emoji: "😻", text: "SNS" },
 ];
 
+const StyledContainer = styled(Container)({
+  backgroundColor: "gray",
+  paddingTop: "16px",
+});
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <Container>
+      <StyledContainer>
         <Grid container spacing={2}>
           <Grid xs={4}>
             <Container style={{ backgroundColor: "gray" }}>
@@ -40,7 +45,7 @@ function App() {
             </Container>
           </Grid>
         </Grid>
-      </Container>
+      </StyledContainer>
     </div>
   );
 }

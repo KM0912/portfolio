@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { Container, styled } from "@mui/material";
 import React from "react";
 import { colors } from "../../config/colors";
 import { SITE_TITLE } from "../../config/config";
@@ -21,7 +21,9 @@ const StyledP = styled("p")({
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledP>{SITE_TITLE}</StyledP>
+      <Container>
+        <StyledP>{SITE_TITLE}</StyledP>
+      </Container>
     </StyledHeader>
   );
 };
