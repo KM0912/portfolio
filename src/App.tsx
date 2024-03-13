@@ -10,6 +10,7 @@ import Skill from "./components/organisms/Skill";
 import Sns from "./components/organisms/Sns";
 import Header from "./components/organisms/Header";
 import { colors } from "./config/colors";
+import { BIRTHDAY } from "./config/config";
 
 const MENU_ITEMS = [
   { id: "about", emoji: "😸", text: "About" },
@@ -44,8 +45,8 @@ function App() {
           <Grid xs={8}>
             <StyledContentContainer>
               <Routes>
-                <Route path="/" element={<About />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/" element={<About birthday={BIRTHDAY} />} />
+                <Route path="/about" element={<About birthday={BIRTHDAY} />} />
                 <Route path="/works" element={<Works />} />
                 <Route path="/skill" element={<Skill />} />
                 <Route path="/sns" element={<Sns />} />
