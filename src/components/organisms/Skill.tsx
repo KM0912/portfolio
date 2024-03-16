@@ -3,15 +3,19 @@ import { Box, Typography, styled } from "@mui/material";
 import Contents from "./Contents";
 
 const SkillList = {
-  frontEnd: [
+  frontEndLanguage: [
     { src: "/images/skill/javascript.svg", alt: "JavaScript" },
     { src: "/images/skill/typescript.svg", alt: "TypeScript" },
   ],
-  backEnd: [
+  frontEndFramework: [{ src: "/images/skill/react.svg", alt: "react" }],
+  backEndLanguage: [
     { src: "/images/skill/php.svg", alt: "php" },
+    { src: "/images/skill/python.svg", alt: "python" },
+  ],
+  backEndFramework: [
+    { src: "/images/skill/node-js.svg", alt: "Node.js" },
     { src: "/images/skill/laravel.svg", alt: "laravel" },
     { src: "/images/skill/cakephp.svg", alt: "cakephp" },
-    { src: "/images/skill/react.svg", alt: "react" },
   ],
   database: [
     { src: "/images/skill/mysql.svg", alt: "MySQL" },
@@ -25,7 +29,7 @@ const SkillList = {
     { src: "/images/skill/docker.svg", alt: "Docker" },
   ],
   other: [
-    { src: "/images/skill/nextjs.svg", alt: "Next.js" },
+    { src: "/images/skill/next-js.svg", alt: "Next.js" },
     { src: "/images/skill/express.svg", alt: "Express" },
   ],
 };
@@ -46,16 +50,42 @@ const Skill = () => {
       gap={2}
     >
       <Typography variant="h3">front-end</Typography>
-      <Box display="flex" justifyContent="space-around" width="100%">
-        {SkillList.frontEnd.map((skill, index) => (
-          <StyledImg key={index} src={skill.src} alt={skill.alt} />
-        ))}
+      <Box>
+        <Box>
+          <Typography variant="h4">programming language</Typography>
+          <Box display="flex" justifyContent="space-around" width="100%">
+            {SkillList.frontEndLanguage.map((skill, index) => (
+              <StyledImg key={index} src={skill.src} alt={skill.alt} />
+            ))}
+          </Box>
+        </Box>
+        <Box>
+          <Typography variant="h4">framework</Typography>
+          <Box display="flex" justifyContent="space-around" width="100%">
+            {SkillList.frontEndFramework.map((skill, index) => (
+              <StyledImg key={index} src={skill.src} alt={skill.alt} />
+            ))}
+          </Box>
+        </Box>
       </Box>
       <Typography variant="h3">back-end</Typography>
-      <Box display="flex" justifyContent="space-around" width="100%">
-        {SkillList.backEnd.map((skill, index) => (
-          <StyledImg key={index} src={skill.src} alt={skill.alt} />
-        ))}
+      <Box>
+        <Box>
+          <Typography variant="h4">programming language</Typography>
+          <Box display="flex" justifyContent="space-around" width="100%">
+            {SkillList.backEndLanguage.map((skill, index) => (
+              <StyledImg key={index} src={skill.src} alt={skill.alt} />
+            ))}
+          </Box>
+        </Box>
+        <Box>
+          <Typography variant="h4">framework</Typography>
+          <Box display="flex" justifyContent="space-around" width="100%">
+            {SkillList.backEndFramework.map((skill, index) => (
+              <StyledImg key={index} src={skill.src} alt={skill.alt} />
+            ))}
+          </Box>
+        </Box>
       </Box>
       <Typography variant="h3">database</Typography>
       <Box display="flex" justifyContent="space-around" width="100%">
