@@ -10,7 +10,7 @@ import {
   RadarChart,
   ResponsiveContainer,
 } from "recharts";
-import { SkillList, SkillListType, SkillType } from "../../config/skillList";
+import { SkillList, SkillType } from "../../config/skillList";
 
 const StyledImg = styled("img")({
   width: "50px",
