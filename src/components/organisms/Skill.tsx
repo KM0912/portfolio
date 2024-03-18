@@ -1,42 +1,114 @@
 import React from "react";
 import { Box, Typography, styled } from "@mui/material";
 import Contents from "./Contents";
+import {
+  Legend,
+  PolarAngleAxis,
+  PolarGrid,
+  PolarRadiusAxis,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+} from "recharts";
+
+type SkillType = {
+  name: string;
+  level: number;
+  src: string;
+  alt: string;
+};
 
 const SkillList = {
-  frontEndLanguage: [
-    { src: "/images/skill/javascript.svg", alt: "JavaScript" },
-    { src: "/images/skill/typescript.svg", alt: "TypeScript" },
+  frontEnd: [
+    {
+      name: "JavaScript",
+      level: 3,
+      src: "/images/skill/javascript.svg",
+      alt: "JavaScript",
+    },
+    {
+      name: "TypeScript",
+      level: 3,
+      src: "/images/skill/typescript.svg",
+      alt: "TypeScript",
+    },
+    { name: "React", level: 3, src: "/images/skill/react.svg", alt: "react" },
+    {
+      name: "Next.js",
+      level: 2,
+      src: "/images/skill/next-js.svg",
+      alt: "Next.js",
+    },
   ],
-  frontEndFramework: [{ src: "/images/skill/react.svg", alt: "react" }],
-  backEndLanguage: [
-    { src: "/images/skill/php.svg", alt: "php" },
-    { src: "/images/skill/python.svg", alt: "python" },
-  ],
-  backEndFramework: [
-    { src: "/images/skill/node-js.svg", alt: "Node.js" },
-    { src: "/images/skill/laravel.svg", alt: "laravel" },
-    { src: "/images/skill/cakephp.svg", alt: "cakephp" },
+  backEnd: [
+    { name: "php", level: 3, src: "/images/skill/php.svg", alt: "php" },
+    {
+      name: "python",
+      level: 3,
+      src: "/images/skill/python.svg",
+      alt: "python",
+    },
+    {
+      name: "Node.js",
+      level: 2,
+      src: "/images/skill/node-js.svg",
+      alt: "Node.js",
+    },
+    {
+      name: "laravel",
+      level: 2,
+      src: "/images/skill/laravel.svg",
+      alt: "laravel",
+    },
+    {
+      name: "cakephp",
+      level: 3,
+      src: "/images/skill/cakephp.svg",
+      alt: "cakephp",
+    },
+    {
+      name: "Express",
+      level: 1,
+      src: "/images/skill/express.svg",
+      alt: "Express",
+    },
   ],
   database: [
-    { src: "/images/skill/mysql.svg", alt: "MySQL" },
-    { src: "/images/skill/postgresql.svg", alt: "PostgreSQL" },
-    { src: "/images/skill/sql-server.svg", alt: "SQLServer" },
+    { name: "MySQL", level: 3, src: "/images/skill/mysql.svg", alt: "MySQL" },
+    {
+      name: "PostgreSQL",
+      level: 3,
+      src: "/images/skill/postgresql.svg",
+      alt: "PostgreSQL",
+    },
+    {
+      name: "SQLServer",
+      level: 3,
+      src: "/images/skill/sql-server.svg",
+      alt: "SQLServer",
+    },
   ],
   tool: [
-    { src: "/images/skill/git.svg", alt: "Git" },
-    { src: "/images/skill/github.svg", alt: "GitHub" },
-    { src: "/images/skill/aws.svg", alt: "AWS" },
-    { src: "/images/skill/docker.svg", alt: "Docker" },
-  ],
-  other: [
-    { src: "/images/skill/next-js.svg", alt: "Next.js" },
-    { src: "/images/skill/express.svg", alt: "Express" },
+    { name: "Git", level: 3, src: "/images/skill/git.svg", alt: "Git" },
+    {
+      name: "GitHub",
+      level: 3,
+      src: "/images/skill/github.svg",
+      alt: "GitHub",
+    },
+    { name: "AWS", level: 2, src: "/images/skill/aws.svg", alt: "AWS" },
+    {
+      name: "Docker",
+      level: 2,
+      src: "/images/skill/docker.svg",
+      alt: "Docker",
+    },
   ],
 };
 
 const StyledImg = styled("img")({
-  width: "150px",
-  height: "150px",
+  width: "50px",
+  height: "50px",
   objectFit: "contain",
 });
 
@@ -48,66 +120,45 @@ const Skill = () => {
       alignItems="center"
       width="100%"
       gap={2}
+      height="100%"
     >
-      <Typography variant="h3">front-end</Typography>
-      <Box>
-        <Box>
-          <Typography variant="h4">programming language</Typography>
+      {Object.keys(SkillList).map((key) => (
+        <>
+          <Typography key={key} variant="h3">
+            {key}
+          </Typography>
           <Box display="flex" justifyContent="space-around" width="100%">
-            {SkillList.frontEndLanguage.map((skill, index) => (
+            {SkillList[key as keyof typeof SkillList].map((skill, index) => (
               <StyledImg key={index} src={skill.src} alt={skill.alt} />
             ))}
           </Box>
-        </Box>
-        <Box>
-          <Typography variant="h4">framework</Typography>
-          <Box display="flex" justifyContent="space-around" width="100%">
-            {SkillList.frontEndFramework.map((skill, index) => (
-              <StyledImg key={index} src={skill.src} alt={skill.alt} />
-            ))}
-          </Box>
-        </Box>
-      </Box>
-      <Typography variant="h3">back-end</Typography>
-      <Box>
-        <Box>
-          <Typography variant="h4">programming language</Typography>
-          <Box display="flex" justifyContent="space-around" width="100%">
-            {SkillList.backEndLanguage.map((skill, index) => (
-              <StyledImg key={index} src={skill.src} alt={skill.alt} />
-            ))}
-          </Box>
-        </Box>
-        <Box>
-          <Typography variant="h4">framework</Typography>
-          <Box display="flex" justifyContent="space-around" width="100%">
-            {SkillList.backEndFramework.map((skill, index) => (
-              <StyledImg key={index} src={skill.src} alt={skill.alt} />
-            ))}
-          </Box>
-        </Box>
-      </Box>
-      <Typography variant="h3">database</Typography>
-      <Box display="flex" justifyContent="space-around" width="100%">
-        {SkillList.database.map((skill, index) => (
-          <StyledImg key={index} src={skill.src} alt={skill.alt} />
-        ))}
-      </Box>
-      <Typography variant="h3">tool</Typography>
-      <Box display="flex" justifyContent="space-around" width="100%">
-        {SkillList.tool.map((skill, index) => (
-          <StyledImg key={index} src={skill.src} alt={skill.alt} />
-        ))}
-      </Box>
-      <Typography variant="h3">other</Typography>
-      <Box display="flex" justifyContent="space-around" width="100%">
-        {SkillList.other.map((skill, index) => (
-          <StyledImg key={index} src={skill.src} alt={skill.alt} />
-        ))}
-      </Box>
+          <RadarChartComponent
+            data={SkillList[key as keyof typeof SkillList]}
+          />
+        </>
+      ))}
     </Box>
   );
   return <Contents title="Skill" contents={contents} />;
+};
+
+const RadarChartComponent = ({ data }: { data: SkillType[] }) => {
+  return (
+    <ResponsiveContainer width="100%" height={500}>
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey="name" radius={200} tickSize={20} />
+        <PolarRadiusAxis angle={90} domain={[0, 5]} tickCount={6} />
+        <Radar
+          dataKey="level"
+          stroke="#8884d8"
+          fill="#8884d8"
+          fillOpacity={0.6}
+        />
+        <Legend />
+      </RadarChart>
+    </ResponsiveContainer>
+  );
 };
 
 export default Skill;
