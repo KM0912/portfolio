@@ -123,19 +123,19 @@ const Skill = () => {
       height="100%"
     >
       {Object.keys(SkillList).map((key) => (
-        <>
+        <React.Fragment key={key}>
           <Typography key={key} variant="h3">
             {key}
           </Typography>
           <Box display="flex" justifyContent="space-around" width="100%">
-            {SkillList[key as keyof typeof SkillList].map((skill, index) => (
-              <StyledImg key={index} src={skill.src} alt={skill.alt} />
+            {SkillList[key as keyof typeof SkillList].map((skill) => (
+              <StyledImg key={skill.name} src={skill.src} alt={skill.alt} />
             ))}
           </Box>
           <RadarChartComponent
             data={SkillList[key as keyof typeof SkillList]}
           />
-        </>
+        </React.Fragment>
       ))}
     </Box>
   );
