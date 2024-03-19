@@ -33,7 +33,7 @@ const Skill = () => {
           <Typography key={key} variant="h3">
             {key}
           </Typography>
-          <Box display="flex" justifyContent="space-around" width="100%">
+          <Box display="flex" justifyContent="center" width="100%" gap={2}>
             {SkillList[key as keyof typeof SkillList].map((skill) => (
               <StyledImg key={skill.name} src={skill.src} alt={skill.alt} />
             ))}
