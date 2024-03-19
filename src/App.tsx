@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { Container, styled } from "@mui/material";
+import { Container, createTheme, styled } from "@mui/material";
 import SideMenu from "./components/organisms/SideMenu";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/organisms/About";
@@ -11,6 +11,7 @@ import Sns from "./components/organisms/Sns";
 import Header from "./components/organisms/Header";
 import { colors } from "./config/colors";
 import { BIRTHDAY } from "./config/config";
+import { ThemeProvider } from "@emotion/react";
 
 const MENU_ITEMS = [
   { id: "about", emoji: "😸", text: "About" },
@@ -18,6 +19,16 @@ const MENU_ITEMS = [
   { id: "skill", emoji: "😺", text: "Skill" },
   { id: "sns", emoji: "😻", text: "SNS" },
 ];
+
+const theme = createTheme({
+  typography: {
+    h3: {
+      color: "teal",
+      fontFamily: "Arial",
+      fontSize: "24px",
+    },
+  },
+});
 
 const StyledMainContainer = styled(Container)({
   minHeight: "100vh",
@@ -33,29 +44,34 @@ const StyledContentContainer = styled(Container)({
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <StyledMainContainer>
-        <Grid container spacing={2}>
-          <Grid xs={4}>
-            <Container>
-              <SideMenu menuItems={MENU_ITEMS} />
-            </Container>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Header />
+        <StyledMainContainer>
+          <Grid container spacing={2}>
+            <Grid xs={4}>
+              <Container>
+                <SideMenu menuItems={MENU_ITEMS} />
+              </Container>
+            </Grid>
+            <Grid xs={8}>
+              <StyledContentContainer>
+                <Routes>
+                  <Route path="/" element={<About birthday={BIRTHDAY} />} />
+                  <Route
+                    path="/about"
+                    element={<About birthday={BIRTHDAY} />}
+                  />
+                  <Route path="/works" element={<Works />} />
+                  <Route path="/skill" element={<Skill />} />
+                  <Route path="/sns" element={<Sns />} />
+                </Routes>
+              </StyledContentContainer>
+            </Grid>
           </Grid>
-          <Grid xs={8}>
-            <StyledContentContainer>
-              <Routes>
-                <Route path="/" element={<About birthday={BIRTHDAY} />} />
-                <Route path="/about" element={<About birthday={BIRTHDAY} />} />
-                <Route path="/works" element={<Works />} />
-                <Route path="/skill" element={<Skill />} />
-                <Route path="/sns" element={<Sns />} />
-              </Routes>
-            </StyledContentContainer>
-          </Grid>
-        </Grid>
-      </StyledMainContainer>
-    </div>
+        </StyledMainContainer>
+      </div>
+    </ThemeProvider>
   );
 }
 
