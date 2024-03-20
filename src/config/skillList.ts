@@ -1,5 +1,8 @@
+import { RadarProps } from "recharts";
+
 export type SkillType = {
   displayName: string;
+  radarChart: Omit<RadarProps, "ref">;
   skills: {
     name: string;
     level: number;
@@ -18,6 +21,12 @@ export type SkillListType = {
 export const SkillList: SkillListType = {
   frontEnd: {
     displayName: "FrontEnd",
+    radarChart: {
+      dataKey: "level",
+      stroke: "#007bff",
+      fill: "#007bff",
+      fillOpacity: 0.6,
+    },
     skills: [
       {
         name: "JavaScript",
@@ -42,6 +51,12 @@ export const SkillList: SkillListType = {
   },
   backEnd: {
     displayName: "BackEnd",
+    radarChart: {
+      dataKey: "level",
+      stroke: "#28a745",
+      fill: "#28a745",
+      fillOpacity: 0.6,
+    },
     skills: [
       { name: "php", level: 3, src: "/images/skill/php.svg", alt: "php" },
       {
@@ -78,6 +93,12 @@ export const SkillList: SkillListType = {
   },
   database: {
     displayName: "Database",
+    radarChart: {
+      dataKey: "level",
+      stroke: "#dc3545",
+      fill: "#dc3545",
+      fillOpacity: 0.6,
+    },
     skills: [
       { name: "MySQL", level: 3, src: "/images/skill/mysql.svg", alt: "MySQL" },
       {
@@ -96,6 +117,12 @@ export const SkillList: SkillListType = {
   },
   tool: {
     displayName: "Tool",
+    radarChart: {
+      dataKey: "level",
+      stroke: "#ffc107",
+      fill: "#ffc107",
+      fillOpacity: 0.6,
+    },
     skills: [
       { name: "Git", level: 3, src: "/images/skill/git.svg", alt: "Git" },
       {

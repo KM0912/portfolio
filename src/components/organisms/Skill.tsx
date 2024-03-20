@@ -39,7 +39,7 @@ const Skill = () => {
             ))}
           </Box>
           <RadarChartComponent
-            data={SkillList[key as keyof typeof SkillList].skills}
+            data={SkillList[key as keyof typeof SkillList]}
           />
         </React.Fragment>
       ))}
@@ -48,19 +48,14 @@ const Skill = () => {
   return <Contents title="Skill" contents={contents} />;
 };
 
-const RadarChartComponent = ({ data }: { data: SkillType["skills"] }) => {
+const RadarChartComponent = ({ data }: { data: SkillType }) => {
   return (
     <ResponsiveContainer width="100%" height={500}>
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.skills}>
         <PolarGrid />
         <PolarAngleAxis dataKey="name" radius={200} tickSize={20} />
         <PolarRadiusAxis angle={90} domain={[0, 5]} tickCount={6} />
-        <Radar
-          dataKey="level"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
-        />
+        <Radar {...data.radarChart} />
         <Legend />
       </RadarChart>
     </ResponsiveContainer>
