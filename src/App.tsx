@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import About from "./components/organisms/About";
 import Works from "./components/organisms/Works";
 import Skill from "./components/organisms/Skill";
-import Sns from "./components/organisms/Sns";
 import Header from "./components/organisms/Header";
 import { colors } from "./config/colors";
 import { BIRTHDAY } from "./config/config";
@@ -17,7 +16,6 @@ const MENU_ITEMS = [
   { id: "about", emoji: "😸", text: "About" },
   { id: "works", emoji: "😼", text: "Works" },
   { id: "skill", emoji: "😺", text: "Skill" },
-  { id: "sns", emoji: "😻", text: "SNS" },
 ];
 
 const theme = createTheme({
@@ -64,7 +62,6 @@ function App() {
                   />
                   <Route path="/works" element={<Works />} />
                   <Route path="/skill" element={<Skill />} />
-                  <Route path="/sns" element={<Sns />} />
                 </Routes>
               </StyledContentContainer>
             </Grid>

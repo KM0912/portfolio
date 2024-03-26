@@ -1,4 +1,4 @@
-type SnsItem = {
+export type SnsItem = {
   name: string;
   src: string;
   alt: string;
