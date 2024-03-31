@@ -27,7 +27,7 @@ const SideMenu = (props: Props) => {
 
   return (
     <>
-      <Paper sx={{ width: 320, maxWidth: "100%" }}>
+      <Paper sx={{ maxWidth: "100%" }}>
         <MenuList>
           {menuItems.map((item) => (
             <MenuItem

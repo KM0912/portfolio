@@ -46,13 +46,13 @@ function App() {
       <div className="App">
         <Header />
         <StyledMainContainer>
-          <Grid container spacing={2}>
-            <Grid xs={4}>
+          <Grid container spacing={1}>
+            <Grid xs={3}>
               <Container>
                 <SideMenu menuItems={MENU_ITEMS} />
               </Container>
             </Grid>
-            <Grid xs={8}>
+            <Grid xs={9}>
               <StyledContentContainer>
                 <Routes>
                   <Route path="/" element={<About birthday={BIRTHDAY} />} />
