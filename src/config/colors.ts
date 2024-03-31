@@ -1,12 +1,16 @@
 export const colors = {
   // body
-  bodyBackground: "lightgray",
+  bodyBackground: "#292935",
+  bodyColor: "#CCCCCC",
 
   // header
-  headerBackground: "#282c34",
-  headerColor: "white",
-  headerBorder: "gray",
+  headerBackground: "#333341",
+  headerColor: "#CCCCCC",
+  headerBorder: "#4B4B5F",
+
+  // side menu
+  sideMenuBackground: "#4B4B5F",
 
   // content
-  contentBackground: "white",
+  contentBackground: "#4B4B5F",
 };

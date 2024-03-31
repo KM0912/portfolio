@@ -20,18 +20,29 @@ const MENU_ITEMS = [
 
 const theme = createTheme({
   typography: {
+    h2: {
+      color: colors.bodyColor,
+      fontFamily: "Arial",
+      fontSize: "32px",
+    },
     h3: {
       color: "teal",
       fontFamily: "Arial",
       fontSize: "24px",
     },
+    body1: {
+      color: colors.bodyColor,
+    },
   },
+});
+
+const StyledDiv = styled("div")({
+  backgroundColor: colors.bodyBackground,
 });
 
 const StyledMainContainer = styled(Container)({
   minHeight: "100vh",
   paddingTop: "16px",
-  backgroundColor: colors.bodyBackground,
 });
 
 const StyledContentContainer = styled(Container)({
@@ -43,7 +54,7 @@ const StyledContentContainer = styled(Container)({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <StyledDiv className="App">
         <Header />
         <StyledMainContainer>
           <Grid container spacing={1}>
@@ -67,7 +78,7 @@ function App() {
             </Grid>
           </Grid>
         </StyledMainContainer>
-      </div>
+      </StyledDiv>
     </ThemeProvider>
   );
 }
