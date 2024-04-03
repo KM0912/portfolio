@@ -10,6 +10,8 @@ export const colors = {
 
   // side menu
   sideMenuBackground: "#4B4B5F",
+  selectedItemBackground: "#5C5C6B",
+  hoverItemBackground: "#5C5C6B",
 
   // content
   contentBackground: "#4B4B5F",
