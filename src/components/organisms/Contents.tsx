@@ -8,6 +8,10 @@ const StyledBox = styled(Box)({
   gap: "1.25rem",
 });
 
+const StyledTypography = styled(Typography)({
+  fontWeight: 600,
+});
+
 type Props = {
   title: string;
   contents: React.ReactNode;
@@ -16,7 +20,9 @@ type Props = {
 const Contents = ({ title, contents }: Props): JSX.Element => {
   return (
     <>
-      <Typography variant="h2">{title}</Typography>
+      <StyledTypography variant="h2" align="left">
+        {title}
+      </StyledTypography>
       <StyledBox>{contents}</StyledBox>
     </>
   );

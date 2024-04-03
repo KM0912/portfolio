@@ -1,6 +1,7 @@
 import React from "react";
 import { styled, Box, Typography, Grid } from "@mui/material";
 import { workList } from "../../config/workList";
+import Contents from "./Contents";
 
 const StyledBox = styled(Box)({
   padding: "16px",
@@ -15,9 +16,8 @@ const StyledImg = styled("img")({
 });
 
 const Works = () => {
-  return (
+  const contents = (
     <StyledBox>
-      <Typography variant="h2">Works</Typography>
       <Grid container spacing={2}>
         {workList.map((work, index) => (
           <React.Fragment key={index}>
@@ -33,6 +33,8 @@ const Works = () => {
       </Grid>
     </StyledBox>
   );
+
+  return <Contents title="Works" contents={contents} />;
 };
 
 export default Works;
