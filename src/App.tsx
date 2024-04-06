@@ -26,7 +26,7 @@ const theme = createTheme({
       fontSize: "32px",
     },
     h3: {
-      color: "teal",
+      color: colors.bodyColor,
       fontFamily: "Arial",
       fontSize: "24px",
     },
