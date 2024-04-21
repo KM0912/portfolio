@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Typography, styled } from "@mui/material";
+import React, { useState } from "react";
+import { Box, styled } from "@mui/material";
 import Contents from "./Contents";
 import {
   Legend,
@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { SkillList, SkillType } from "../../config/skillList";
+import SkillListTabs from "../molecules/SkillListTabs";
 
 const StyledImg = styled("img")({
   width: "50px",
@@ -19,6 +20,11 @@ const StyledImg = styled("img")({
 });
 
 const Skill = () => {
+  const [currenTab, setCurrentTab] = useState(0);
+  const onTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    setCurrentTab(newValue);
+  };
+
   const contents = (
     <Box
       display="flex"
@@ -28,11 +34,13 @@ const Skill = () => {
       gap={2}
       height="100%"
     >
-      {Object.keys(SkillList).map((key) => (
-        <React.Fragment key={key}>
-          <Typography key={key} variant="h3">
-            {SkillList[key as keyof typeof SkillList].displayName}
-          </Typography>
+      <SkillListTabs currentTab={currenTab} onTabChange={onTabChange} />
+      {Object.keys(SkillList).map((key, index) => (
+        <div
+          key={key}
+          style={{ height: "100%", width: "100%" }}
+          hidden={index !== currenTab}
+        >
           <Box display="flex" justifyContent="center" width="100%" gap={2}>
             {SkillList[key as keyof typeof SkillList].skills.map((skill) => (
               <StyledImg key={skill.name} src={skill.src} alt={skill.alt} />
@@ -41,7 +49,7 @@ const Skill = () => {
           <RadarChartComponent
             data={SkillList[key as keyof typeof SkillList]}
           />
-        </React.Fragment>
+        </div>
       ))}
     </Box>
   );
