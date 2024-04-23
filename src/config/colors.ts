@@ -1,7 +1,7 @@
 export const colors = {
   // body
   bodyBackground: "#292935",
-  bodyColor: "#CCCCCC",
+  bodyColor: "#4B4B5F",
 
   // header
   headerBackground: "#333341",
@@ -9,10 +9,10 @@ export const colors = {
   headerBorder: "#4B4B5F",
 
   // side menu
-  sideMenuBackground: "#4B4B5F",
+  sideMenuBackground: "#CCCCCC",
   selectedItemBackground: "#5C5C6B",
   hoverItemBackground: "#5C5C6B",
 
   // content
-  contentBackground: "#4B4B5F",
+  contentBackground: "#CCCCCC",
 };

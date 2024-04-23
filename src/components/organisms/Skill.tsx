@@ -41,7 +41,7 @@ const Skill = () => {
           style={{ height: "100%", width: "100%" }}
           hidden={index !== currenTab}
         >
-          <Box display="flex" justifyContent="center" width="100%" gap={2}>
+          <Box display="flex" justifyContent="center" width="100%" gap={3}>
             {SkillList[key as keyof typeof SkillList].skills.map((skill) => (
               <StyledImg key={skill.name} src={skill.src} alt={skill.alt} />
             ))}
@@ -60,9 +60,19 @@ const RadarChartComponent = ({ data }: { data: SkillType }) => {
   return (
     <ResponsiveContainer width="100%" height={500}>
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.skills}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="name" radius={200} tickSize={20} />
-        <PolarRadiusAxis angle={90} domain={[0, 5]} tickCount={6} />
+        <PolarGrid stroke="#888888" />
+        <PolarAngleAxis
+          dataKey="name"
+          radius={200}
+          tickSize={20}
+          tick={{ fill: "#888888" }}
+        />
+        <PolarRadiusAxis
+          angle={90}
+          domain={[0, 5]}
+          tickCount={6}
+          tick={{ fill: "#888888" }}
+        />
         <Radar {...data.radarChart} />
         <Legend />
       </RadarChart>
