@@ -18,15 +18,17 @@ const StyledImg = styled("img")({
 const Works = () => {
   const contents = (
     <StyledBox>
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         {workList.map((work, index) => (
           <React.Fragment key={index}>
             <Grid item xs={5}>
               <StyledImg src={work.img} alt={work.title} />
             </Grid>
             <Grid item xs={7}>
-              <Typography variant="h3">{work.title}</Typography>
-              <Typography>{work.description}</Typography>
+              <Typography variant="h3" align="left">
+                {work.title}
+              </Typography>
+              <Typography align="left">{work.description}</Typography>
             </Grid>
           </React.Fragment>
         ))}
