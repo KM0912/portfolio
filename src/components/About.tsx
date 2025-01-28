@@ -44,12 +44,12 @@ const About = () => {
             isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-            <div className="relative rounded-lg overflow-hidden">
+          <div className="relative group w-80 h-80 mx-auto">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+            <div className="relative rounded-full overflow-hidden w-80 h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <img
-                src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                src="/assets/images/profile-image.png"
                 alt="Profile"
                 className="w-full rounded-lg shadow-2xl transform transition duration-300 group-hover:scale-[1.01]"
               />
