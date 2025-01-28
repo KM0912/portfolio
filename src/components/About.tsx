@@ -1,33 +1,5 @@
+import { profile } from "../data/data";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
-
-const aboutMe: {
-  title: string;
-  content: string | string[];
-}[] = [
-  {
-    title: "名前",
-    content: "K.M",
-  },
-  {
-    title: "経歴",
-    content:
-      "現在、大手IT企業でフルスタックエンジニアとして活躍中。5年以上のWeb開発経験を持ち、フロントエンドからバックエンド、インフラまで幅広い技術スタックを習得しています。",
-  },
-  {
-    title: "得意分野",
-    content: [
-      "モダンなWebアプリケーション開発",
-      "クラウドインフラの設計・構築",
-      "パフォーマンス最適化",
-      "チーム開発・技術メンタリング",
-    ],
-  },
-  {
-    title: "趣味・興味",
-    content:
-      "新しい技術のキャッチアップと実践を心がけています。休日は技術書を読んだり、個人開発を行ったりしています。また、技術ブログの執筆やコミュニティ活動にも積極的に参加しています。",
-  },
-];
 
 const About = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -58,8 +30,7 @@ const About = () => {
 
           <div className="space-y-8 self-start">
             <h2 className="text-4xl font-bold text-white">About Me</h2>
-
-            {aboutMe.map((item) => (
+            {profile.map((item) => (
               <div key={item.title} className="space-y-4">
                 <h3 className="text-2xl font-semibold text-white border-l-4 border-cyan-500 pl-4">
                   {item.title}
