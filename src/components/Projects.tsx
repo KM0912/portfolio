@@ -61,21 +61,6 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-200 mb-2">主な成果</h4>
-                  <ul className="space-y-2">
-                    {project.achievements.map((achievement) => (
-                      <li
-                        key={achievement}
-                        className="flex items-center text-gray-300"
-                      >
-                        <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
           ))}
