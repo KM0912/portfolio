@@ -3,6 +3,14 @@ type Profile = {
   content: string | string[];
 }[];
 
+type Skill = {
+  title: string;
+  skills: {
+    name: string;
+    level: number;
+  }[];
+};
+
 export const profile: Profile = [
   {
     title: "名前",
@@ -21,6 +29,49 @@ export const profile: Profile = [
       "読書(ビジネス書、技術書) 📕",
       "バドミントン 🏸",
       "キャンプ 🏕️",
+    ],
+  },
+];
+
+export const skills: Skill[] = [
+  {
+    title: "プログラミング言語",
+    skills: [
+      { name: "PHP", level: 3 },
+      { name: "Python", level: 3 },
+      { name: "HTML/CSS", level: 2 },
+      { name: "JavaScript/TypeScript", level: 4 },
+    ],
+  },
+  {
+    title: "フレームワーク",
+    skills: [
+      { name: "CakePHP", level: 4 },
+      { name: "Laravel", level: 3 },
+      { name: "React", level: 4 },
+      { name: "Next.js", level: 2 },
+      { name: "Vue.js", level: 2 },
+      { name: "Nuxt.js", level: 2 },
+      { name: "Express", level: 1 },
+      { name: "Node.js", level: 3 },
+    ],
+  },
+  {
+    title: "インフラ・ツール",
+    skills: [
+      { name: "Git", level: 3 },
+      { name: "GitHub", level: 3 },
+      { name: "AWS", level: 3 },
+      { name: "Docker", level: 3 },
+    ],
+  },
+  {
+    title: "データベース",
+    skills: [
+      { name: "PostgreSQL", level: 3 },
+      { name: "MySQL", level: 3 },
+      { name: "MariaDB", level: 3 },
+      { name: "SQLServer", level: 3 },
     ],
   },
 ];
