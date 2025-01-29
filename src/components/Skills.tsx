@@ -2,13 +2,6 @@ import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
 import { skills } from "../data/data";
 
-// スキルレベルの評価基準
-// 1: 調べながら基本的な開発ができる。エラーの解決には時間がかかる。
-// 2: 実務経験が
-// 3: 実務で半年以上経験があり、問題なく開発できる。
-// 4: 実務で経験したことがあり、問題なく開発できる。他の人に教えられる。
-// 5: プロフェッショナル。完全に理解しており、他の人に教えられる。
-
 const Skills = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
 
