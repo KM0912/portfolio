@@ -37,7 +37,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="w-full md:w-1/2 space-y-6">
+              <div className="w-full md:w-1/2 space-y-6 self-start">
                 <h3 className="text-2xl font-bold text-white border-l-4 border-cyan-500 pl-4">
                   {project.title}
                 </h3>
