@@ -41,7 +41,9 @@ const Projects = () => {
                 <h3 className="text-2xl font-bold text-white border-l-4 border-cyan-500 pl-4">
                   {project.title}
                 </h3>
-                <p className="text-gray-300">{project.description}</p>
+                <p className="text-gray-300 whitespace-pre-line">
+                  {project.description}
+                </p>
 
                 <div>
                   <h4 className="font-semibold text-gray-200 mb-2">担当範囲</h4>
