@@ -96,7 +96,7 @@ export const projects: Project[] = [
       規模の大きなプロジェクトであり、テーブル数は400弱、ソースコードの量やファイル数も膨大でした。新機能を追加するにあたり、既存のコードを理解し、修正を行うことが求められました。既存の仕様を把握することが難しいプロジェクトでしたが、チームメンバーとのコミュニケーションを密に取ったり、ソースコードを読み込むことで、無事に開発を進めることができました。      
     `,
     image:
-      "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tech: [
       "React",
       "TypeScript",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
       このDWHは、学生の研究でも使用されるため、匿名化する処理を行なっています。適切な権限を持ったユーザーのみが匿名化されたユーザーの名前を確認することができるようになっています。
     `,
     image:
-      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tech: ["Oracle", "ADW"],
     role: "プロジェクトリーダー / 設計 / 開発",
   },
