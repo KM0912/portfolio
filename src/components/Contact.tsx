@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
-import SectionTitle from './SectionTitle';
-import { useIntersectionObserver } from '../utils/useIntersectionObserver';
+import React, { useState } from "react";
+import { Mail, Linkedin, Github } from "lucide-react";
+import SectionTitle from "./SectionTitle";
+import { useIntersectionObserver } from "../utils/useIntersectionObserver";
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   const handleChange = (
@@ -27,14 +27,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="お問い合わせ" />
 
-        <div 
+        <div
           ref={elementRef}
           className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${
-            isVisible ? 'animate-fade-in-up' : 'opacity-0'
+            isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
           <div className="space-y-8">
@@ -84,7 +84,10 @@ const Contact = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700"
+          >
             <div>
               <label
                 htmlFor="name"
