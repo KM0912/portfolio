@@ -19,6 +19,12 @@ type Project = {
   role: string;
 };
 
+type Certification = {
+  name: string;
+  issuer: string;
+  date: string;
+};
+
 export const profile: Profile = [
   {
     title: "名前",
@@ -142,5 +148,23 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tech: ["Oracle", "ADW"],
     role: "プロジェクトリーダー / 設計 / 開発",
+  },
+];
+
+export const certifications: Certification[] = [
+  {
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2023年取得",
+  },
+  {
+    name: "応用情報技術者試験",
+    issuer: "IPA",
+    date: "2021年取得",
+  },
+  {
+    name: "基本情報技術者試験",
+    issuer: "IPA",
+    date: "2021年取得",
   },
 ];

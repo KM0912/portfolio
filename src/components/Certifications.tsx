@@ -1,28 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
-
-const certifications = [
-  {
-    name: "AWS認定ソリューションアーキテクト プロフェッショナル",
-    issuer: "Amazon Web Services",
-    date: "2023年取得",
-  },
-  {
-    name: "Google Cloud Professional Cloud Architect",
-    issuer: "Google Cloud",
-    date: "2023年取得",
-  },
-  {
-    name: "応用情報技術者試験",
-    issuer: "IPA",
-    date: "2022年取得",
-  },
-  {
-    name: "Oracle Certified Professional, Java SE 11 Developer",
-    issuer: "Oracle",
-    date: "2022年取得",
-  },
-];
+import { certifications } from "../data/data";
 
 const Certifications = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
