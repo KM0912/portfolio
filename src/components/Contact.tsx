@@ -33,62 +33,19 @@ const Contact = () => {
 
         <div
           ref={elementRef}
-          className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${
+          className={`grid grid-cols-1 gap-12 ${
             isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <div className="space-y-8">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-xl font-semibold text-white mb-6 border-l-4 border-cyan-500 pl-4">
-                お気軽にご連絡ください
-              </h3>
-              <p className="text-gray-300 mb-8">
-                プロジェクトについてのご相談、お見積もりのご依頼など、
-                お気軽にお問い合わせください。
-                通常24時間以内にご返信いたします。
-              </p>
-
-              <div className="space-y-6">
-                <a
-                  href="mailto:contact@example.com"
-                  className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
-                >
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 group-hover:from-cyan-500/20 group-hover:to-blue-500/20 transition-colors duration-300">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <span className="ml-3">contact@example.com</span>
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
-                >
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 group-hover:from-cyan-500/20 group-hover:to-blue-500/20 transition-colors duration-300">
-                    <Linkedin className="h-5 w-5" />
-                  </div>
-                  <span className="ml-3">LinkedIn</span>
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
-                >
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 group-hover:from-cyan-500/20 group-hover:to-blue-500/20 transition-colors duration-300">
-                    <Github className="h-5 w-5" />
-                  </div>
-                  <span className="ml-3">GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
           <form
             onSubmit={handleSubmit}
             className="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700"
           >
             <div>
+              <p className="text-gray-300 mb-4">
+                プロジェクトについてのご相談、お見積もりのご依頼など、
+                お気軽にお問い合わせください。
+              </p>
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-300 mb-1"
