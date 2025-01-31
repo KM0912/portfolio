@@ -21,7 +21,7 @@ const About = () => {
             <div className="relative rounded-full overflow-hidden w-80 h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <img
-                src="/public/images/profile-image.png"
+                src="/assets/images/profile-image.png"
                 alt="Profile"
                 className="w-full rounded-lg shadow-2xl transform transition duration-300 group-hover:scale-[1.01]"
               />
