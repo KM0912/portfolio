@@ -13,6 +13,7 @@ type FormData = {
   name: string;
   email: string;
   message: string;
+  "form-name": string;
 };
 
 const Contact = () => {
@@ -23,6 +24,7 @@ const Contact = () => {
   );
 
   const onSubmit = (data: FormData) => {
+    data["form-name"] = "contact";
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
