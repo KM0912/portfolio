@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { Mail, Linkedin, Github } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
+import Notification from "./Notification"; // 追加
+
+interface NotificationState {
+  message: string;
+  type: "success" | "error";
+}
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -10,10 +15,39 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [notification, setNotification] = useState<NotificationState | null>(
+    null
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => {
+        if (res.ok) {
+          setNotification({
+            message: "フォームが正常に送信されました。",
+            type: "success",
+          });
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          setNotification({
+            message: "フォームの送信中にエラーが発生しました。",
+            type: "error",
+          });
+        }
+      })
+      .catch((error) => {
+        setNotification({
+          message: "フォームの送信中にエラーが発生しました。",
+          type: "error",
+        });
+        console.error("Form submission error:", error);
+      });
   };
 
   const handleChange = (
@@ -30,7 +64,13 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="お問い合わせ" />
-
+        {notification && (
+          <Notification
+            message={notification.message}
+            type={notification.type}
+            onClose={() => setNotification(null)}
+          />
+        )}
         <div
           ref={elementRef}
           className={`grid grid-cols-1 gap-12 ${
@@ -40,6 +80,7 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit}
             className="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700"
+            data-netlify="true"
           >
             <div>
               <p className="text-gray-300 mb-4">
@@ -102,8 +143,8 @@ const Contact = () => {
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg font-medium 
-                       hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800
-                       transform hover:-translate-y-0.5 transition-all duration-300"
+                        hover:from-cyan-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800
+                        transform hover:-translate-y-0.5 transition-all duration-300"
             >
               送信する
             </button>
