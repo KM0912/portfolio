@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- React で Netlify Formを使うためのフォームを追加 -->
+    <!-- 参考: https://zenn.dev/kuesato/articles/ee83748ebd00e0 -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

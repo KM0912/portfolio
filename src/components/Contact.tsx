@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
-import Notification from "./Notification"; // 追加
+import Notification from "./Notification";
 
-interface NotificationState {
+type NotificationState = {
   message: string;
   type: "success" | "error";
-}
+};
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const Contact = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const { handleSubmit, register } = useForm<FormData>();
   const [notification, setNotification] = useState<NotificationState | null>(
     null
   );
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
+  const onSubmit = (data: FormData) => {
     fetch("/", {
       method: "POST",
-      body: data,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
     })
       .then((res) => {
         if (res.ok) {
@@ -33,7 +34,6 @@ const Contact = () => {
             message: "フォームが正常に送信されました。",
             type: "success",
           });
-          setFormData({ name: "", email: "", message: "" });
         } else {
           setNotification({
             message: "フォームの送信中にエラーが発生しました。",
@@ -48,16 +48,6 @@ const Contact = () => {
         });
         console.error("Form submission error:", error);
       });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
   };
 
   return (
@@ -78,7 +68,7 @@ const Contact = () => {
           }`}
         >
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             className="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700"
             data-netlify="true"
           >
@@ -95,11 +85,7 @@ const Contact = () => {
               </label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
+                {...register("name", { required: true })}
                 className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
               />
             </div>
@@ -113,11 +99,7 @@ const Contact = () => {
               </label>
               <input
                 type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
+                {...register("email", { required: true })}
                 className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
               />
             </div>
@@ -131,11 +113,8 @@ const Contact = () => {
               </label>
               <textarea
                 id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
                 rows={4}
-                required
+                {...register("message", { required: true })}
                 className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
               ></textarea>
             </div>
