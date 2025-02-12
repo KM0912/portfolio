@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { menuItems } from "../data/menuItems";
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -17,15 +18,6 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const menuItems = [
-    { label: "自己紹介", href: "#about" },
-    { label: "スキル", href: "#skills" },
-    { label: "実績", href: "#projects" },
-    { label: "サービス", href: "#services" },
-    { label: "資格", href: "#certifications" },
-    { label: "お問い合わせ", href: "#contact" },
-  ];
 
   return (
     <header

@@ -1,4 +1,5 @@
 import Tooltip from "@mui/material/Tooltip";
+import { menuItems } from "../data/menuItems";
 
 const Footer = () => {
   return (
@@ -48,13 +49,7 @@ const Footer = () => {
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500"></span>
             </h3>
             <ul className="space-y-2">
-              {[
-                { label: "自己紹介", href: "#about" },
-                { label: "スキル", href: "#skills" },
-                { label: "実績", href: "#projects" },
-                { label: "資格", href: "#certifications" },
-                { label: "お問い合わせ", href: "#contact" },
-              ].map((item) => (
+              {menuItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
