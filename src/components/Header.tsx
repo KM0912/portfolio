@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -14,25 +14,25 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const menuItems = [
-    { label: '自己紹介', href: '#about' },
-    { label: 'スキル', href: '#skills' },
-    { label: '実績', href: '#projects' },
-    { label: 'サービス', href: '#services' },
-    { label: '資格', href: '#certifications' },
-    { label: 'お問い合わせ', href: '#contact' },
+    { label: "自己紹介", href: "#about" },
+    { label: "スキル", href: "#skills" },
+    { label: "実績", href: "#projects" },
+    { label: "サービス", href: "#services" },
+    { label: "資格", href: "#certifications" },
+    { label: "お問い合わせ", href: "#contact" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-gray-900/90 backdrop-blur-sm shadow-lg shadow-black/10'
-          : 'bg-transparent'
+          ? "bg-gray-900/90 backdrop-blur-sm shadow-lg shadow-black/10"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

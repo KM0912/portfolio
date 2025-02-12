@@ -1,3 +1,5 @@
+import Tooltip from "@mui/material/Tooltip";
+
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12">
@@ -9,30 +11,34 @@ const Footer = () => {
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500"></span>
             </h3>
             <div className="flex space-x-4">
-              <a
-                href="https://github.com/KM0912"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-500 transition-colors duration-300"
-              >
-                <img
-                  src="/images/github-mark-white.svg"
-                  alt="GitHub"
-                  className="h-5 w-5"
-                />
-              </a>
-              <a
-                href="https://zenn.dev/torakm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-500 transition-colors duration-300"
-              >
-                <img
-                  src="/images/zenn-logo-only-white.svg"
-                  alt="Zenn"
-                  className="h-5 w-5"
-                />
-              </a>
+              <Tooltip title="GitHub" arrow>
+                <a
+                  href="https://github.com/KM0912"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-cyan-500 transition-colors duration-300"
+                >
+                  <img
+                    src="/images/github-mark-white.svg"
+                    alt="GitHub"
+                    className="h-5 w-5"
+                  />
+                </a>
+              </Tooltip>
+              <Tooltip title="Zenn" arrow>
+                <a
+                  href="https://zenn.dev/torakm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-cyan-500 transition-colors duration-300"
+                >
+                  <img
+                    src="/images/zenn-logo-only-white.svg"
+                    alt="Zenn"
+                    className="h-5 w-5"
+                  />
+                </a>
+              </Tooltip>
             </div>
           </div>
 
