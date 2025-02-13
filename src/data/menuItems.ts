@@ -4,9 +4,9 @@ export interface MenuItem {
 }
 
 export const menuItems: MenuItem[] = [
-  { label: "自己紹介", href: "#about" },
-  { label: "スキル", href: "#skills" },
-  { label: "実績", href: "#projects" },
-  { label: "資格", href: "#certifications" },
-  { label: "お問い合わせ", href: "#contact" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Contact", href: "#contact" },
 ];
