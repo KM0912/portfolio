@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
 import Notification from "./Notification";
+import { menuItems } from "../data/menuItems";
 
 type NotificationState = {
   message: string;
@@ -55,7 +56,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="お問い合わせ" />
+        <SectionTitle title={menuItems.contact.label} />
         {notification && (
           <Notification
             message={notification.message}

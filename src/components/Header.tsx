@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
-            {menuItems.map((item) => (
+            {Object.values(menuItems).map((item) => (
               <a
                 key={item.href}
                 href={item.href}

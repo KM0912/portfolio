@@ -1,6 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
 import { certifications } from "../data/data";
+import { menuItems } from "../data/menuItems";
 
 const Certifications = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -8,7 +9,7 @@ const Certifications = () => {
   return (
     <section id="certifications" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="資格" />
+        <SectionTitle title={menuItems.certifications.label} />
 
         <div
           ref={elementRef}

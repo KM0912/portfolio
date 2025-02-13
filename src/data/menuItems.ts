@@ -1,12 +1,14 @@
-export interface MenuItem {
+export type MenuItem = {
   label: string;
   href: string;
-}
+};
 
-export const menuItems: MenuItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
-];
+export const menuItems: {
+  [key: string]: MenuItem;
+} = {
+  about: { label: "About", href: "#about" },
+  skills: { label: "Skills", href: "#skills" },
+  projects: { label: "Projects", href: "#projects" },
+  certifications: { label: "Certifications", href: "#certifications" },
+  contact: { label: "Contact", href: "#contact" },
+};

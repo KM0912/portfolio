@@ -3,6 +3,7 @@ import SectionTitle from "./SectionTitle";
 import { useIntersectionObserver } from "../utils/useIntersectionObserver";
 import { Github, ExternalLink } from "lucide-react";
 import { projects } from "../data/data";
+import { menuItems } from "../data/menuItems";
 
 const Projects = () => {
   const { elementRef, isVisible } = useIntersectionObserver();
@@ -10,7 +11,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="実績" />
+        <SectionTitle title={menuItems.projects.label} />
 
         <div
           ref={elementRef}
